@@ -17,6 +17,7 @@ const person = {
 
 // Object Destructuring
 console.log('object');
+console.log('check');
 const printPersonName = (personObj) => {
     const { name: personName, age: personAge, greet: greetHuman } = personObj
 
