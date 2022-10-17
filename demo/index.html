@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense tracker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h4 class="page-heading">Expense tracker</h4>
+    <div class="container">
+      <form class="form">
+        <div class="input-control">
+          <label for="amount">amount</label>
+          <input
+            required
+            type="number"
+            min="1"
+            name="amount"
+            id="amount"
+            class="amount"
+          />
+        </div>
+
+        <div class="input-control">
+          <label for="details">details</label>
+          <input required type="text" name="details" id="details" class="details" />
+        </div>
+
+        <div class="input-control">
+          <label for="category">category</label>
+          <select name="category" id="category" class="category">
+            <option value="Grocery">Grocery</option>
+            <option value="Vegetables">Vegetables</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Religious">Religious</option>
+            <option value="Travel">Travel</option>
+            <option value="Health">Health</option>
+          </select>
+        </div>
+
+        <div class="input-control">
+          <input type="submit" value="Submit" class="submit" id="submit" />
+        </div>
+      </form>
+
+      <div class="results-container">
+        <ul id="results" class="results"></ul>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

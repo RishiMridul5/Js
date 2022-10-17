@@ -1,0 +1,201 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: monospace;
+  font-size: 1.2rem;
+  min-height: 100vh;
+  background: linear-gradient(to top right, #000000cb, #0a48475f);
+}
+ul {
+  list-style: none;
+}
+.container {
+  width: 80%;
+  margin: 20px auto;
+}
+.page-heading {
+  text-align: center;
+  color: #fff;
+  background-color: rgb(11, 23, 34);
+  font-weight: 100;
+  padding: 15px;
+}
+.form {
+  height: auto;
+  margin-bottom: 20px;
+  background-color: #3976671d;
+  border: 1px solid #ffffff5e;
+  padding: 10px;
+  border-radius: 0.45rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+}
+.input-control {
+  width: 30%;
+}
+label {
+  display: block;
+  color: #fff;
+  font-weight: thin;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+}
+input {
+  outline: none;
+  border: 2px solid #fff;
+  width: 100%;
+  border-radius: 0.25rem;
+  transition: all 0.5s ease-in-out;
+}
+input[type="text"],
+input[type="number"],
+select {
+  padding: 15px 5px;
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #ffffff93;
+}
+select {
+  display: block;
+  width: 100%;
+  border-radius: 0.25rem;
+}
+option {
+  color: #345;
+  background-color: #6c9c82;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+  color: #345;
+  background-color: #fff;
+}
+
+input[type="submit"] {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  border-radius: 0.5rem;
+  height: auto;
+  padding: 10px;
+  background-color: hsl(175, 23%, 89%);
+  color: #345;
+  margin-top: 20px;
+  transition: all 0.2s ease-in;
+}
+input[type="submit"]:hover {
+  color: #fff;
+  background-color: #232020;
+}
+
+.results-container {
+  width: 100%;
+  max-height: 700px;
+  overflow-y: scroll;
+  border-radius: 0.5rem;
+  background-color: #fff;
+}
+
+.expense-item {
+  padding: 15px;
+  border-bottom: 1px solid #3976671d;
+  margin: 5px auto;
+  display: grid;
+  grid-template-columns: 1fr 3fr 2fr 1fr 1fr;
+  grid-auto-flow: column;
+  gap: 20px;
+}
+.expense-item:last-child {
+  border: 0;
+}
+.expense-item .amountEl {
+  color: #fff;
+  border-radius: 0.45rem;
+  padding: 5px;
+  font-weight: 700;
+  background-color: #342134;
+  text-align: center;
+}
+.expense-item .detailsEl {
+  overflow: hidden;
+  font-size: 0.8rem;
+  color: #0f0e16;
+  min-width: 100px;
+  padding: 5px;
+  line-height: 1.5;
+  letter-spacing: 1px;
+}
+.expense-item .categoryEl {
+  font-weight: thin;
+  font-size: 1.2rem;
+  color: darkgrey;
+}
+.btn-del,
+.btn-edit {
+  outline: none;
+  border: 0;
+  text-transform: capitalize;
+  padding: 5px 10px;
+  font-weight: thin;
+  color: #fff;
+  cursor: pointer;
+}
+.btn-del {
+  max-width: max-content;
+  background-color: #b9566a;
+}
+.btn-edit {
+  max-width: max-content;
+  background-color: #593b59;
+}
+
+@media only screen and (max-width: 700px) {
+  .form {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .input-control {
+    width: 100%;
+  }
+  input {
+    width: 100%;
+  }
+  input[type="text"],
+  input[type="number"],
+  select {
+    padding: 5px;
+  }
+  .expense-item {
+    font-size: 0.8rem;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .categoryEl {
+    justify-self: center;
+  }
+  .detailsEl {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    text-align: center;
+  }
+  .btn-del,
+  .btn-edit {
+    align-self: center;
+    justify-content: right;
+    justify-self: right;
+  }
+  .btn-edit {
+    justify-self: left;
+  }
+}
