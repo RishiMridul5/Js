@@ -11,6 +11,7 @@ const person = {
     age: 27,
     greet(somename) {
         console.log(`Hello my name is ${somename}`)
+        console.log('Hello')
     }
 }
 
