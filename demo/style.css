@@ -3,19 +3,23 @@
   padding: 0;
   margin: 0;
 }
+
 body {
   font-family: monospace;
   font-size: 1.2rem;
   min-height: 100vh;
-  background: linear-gradient(to top right, #000000cb, #0a48475f);
+  background: #fff;
 }
+
 ul {
   list-style: none;
 }
+
 .container {
   width: 80%;
   margin: 20px auto;
 }
+
 .page-heading {
   text-align: center;
   color: #fff;
@@ -23,6 +27,7 @@ ul {
   font-weight: 100;
   padding: 15px;
 }
+
 .form {
   height: auto;
   margin-bottom: 20px;
@@ -35,16 +40,19 @@ ul {
   align-items: center;
   gap: 20px;
 }
+
 .input-control {
   width: 30%;
 }
+
 label {
   display: block;
-  color: #fff;
+  color: #345;
   font-weight: thin;
   font-size: 0.8rem;
   text-transform: capitalize;
 }
+
 input {
   outline: none;
   border: 2px solid #fff;
@@ -52,19 +60,23 @@ input {
   border-radius: 0.25rem;
   transition: all 0.5s ease-in-out;
 }
+
 input[type="text"],
 input[type="number"],
 select {
+  
   padding: 15px 5px;
   background-color: transparent;
   color: #fff;
-  border: 2px solid #ffffff93;
+  border: 2px solid #8b757593;
 }
+
 select {
   display: block;
   width: 100%;
   border-radius: 0.25rem;
 }
+
 option {
   color: #345;
   background-color: #6c9c82;
@@ -74,6 +86,7 @@ input[type="text"]:focus,
 input[type="number"]:focus,
 select:focus {
   color: #345;
+  border: 2px solid #345;
   background-color: #fff;
 }
 
@@ -91,6 +104,7 @@ input[type="submit"] {
   margin-top: 20px;
   transition: all 0.2s ease-in;
 }
+
 input[type="submit"]:hover {
   color: #fff;
   background-color: #232020;
@@ -113,9 +127,11 @@ input[type="submit"]:hover {
   grid-auto-flow: column;
   gap: 20px;
 }
+
 .expense-item:last-child {
   border: 0;
 }
+
 .expense-item .amountEl {
   color: #fff;
   border-radius: 0.45rem;
@@ -124,6 +140,7 @@ input[type="submit"]:hover {
   background-color: #342134;
   text-align: center;
 }
+
 .expense-item .detailsEl {
   overflow: hidden;
   font-size: 0.8rem;
@@ -133,11 +150,13 @@ input[type="submit"]:hover {
   line-height: 1.5;
   letter-spacing: 1px;
 }
+
 .expense-item .categoryEl {
   font-weight: thin;
   font-size: 1.2rem;
   color: darkgrey;
 }
+
 .btn-del,
 .btn-edit {
   outline: none;
@@ -148,10 +167,12 @@ input[type="submit"]:hover {
   color: #fff;
   cursor: pointer;
 }
+
 .btn-del {
   max-width: max-content;
   background-color: #b9566a;
 }
+
 .btn-edit {
   max-width: max-content;
   background-color: #593b59;
@@ -162,17 +183,21 @@ input[type="submit"]:hover {
     flex-direction: column;
     gap: 15px;
   }
+
   .input-control {
     width: 100%;
   }
+
   input {
     width: 100%;
   }
+
   input[type="text"],
   input[type="number"],
   select {
     padding: 5px;
   }
+
   .expense-item {
     font-size: 0.8rem;
     grid-auto-flow: row;
@@ -180,21 +205,25 @@ input[type="submit"]:hover {
     grid-template-rows: repeat(3, 1fr);
     gap: 10px;
   }
+
   .categoryEl {
     justify-self: center;
   }
+
   .detailsEl {
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 2;
     text-align: center;
   }
+
   .btn-del,
   .btn-edit {
     align-self: center;
     justify-content: right;
     justify-self: right;
   }
+
   .btn-edit {
     justify-self: left;
   }

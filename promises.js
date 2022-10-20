@@ -33,6 +33,8 @@ function print1() {
         })
 }
 
+print1()
+
 
 async function print2() {
     let p1 = await new Promise(res => res('a'))

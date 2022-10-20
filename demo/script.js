@@ -4,7 +4,7 @@ const details = document.getElementById('details')
 const category = document.getElementById('category')
 const resultsEl = document.getElementById('results')
 
-const key = `06841afd98bf435d8c9bd2deca0e4f9b`
+const key = `1716214eab9d483a83a640c8189acd06`
 const resourceName = `expenses`
 
 let EDIT_FLAG = false;
@@ -15,7 +15,7 @@ async function fetchExpenses() {
     try {
         let res = await axios.get(
             `https://crudcrud.com/api/${key}/${resourceName}`)
-        console.log(res)
+        
         renderResponse(res.data)
     }
     catch (err) { console.log(err) }
@@ -23,6 +23,8 @@ async function fetchExpenses() {
 }
 
 function renderResponse(expenses) {
+    console.log(expenses);
+    console.log(`inside render`);
     resultsEl.innerHTML = ''
     expenses.forEach((expInfo, idx) => {
 
@@ -74,7 +76,7 @@ async function addExpense(data) {
 
 async function saveEditedExpense(data) {
     try {
-        axios.put(`https://crudcrud.com/api/${key}/${resourceName}/${EDIT_USER_ID}`, data)
+        await axios.put(`https://crudcrud.com/api/${key}/${resourceName}/${EDIT_USER_ID}`, data)
         fetchExpenses()
 
     } catch (err) {
@@ -86,7 +88,7 @@ async function saveEditedExpense(data) {
 async function delExpense(e) {
     const userID = e.target.getAttribute('id')
     try {
-        axios.delete(`https://crudcrud.com/api/${key}/${resourceName}/${userID}`)
+       await axios.delete(`https://crudcrud.com/api/${key}/${resourceName}/${userID}`)
         fetchExpenses()
     } catch (err) {
         err => console.log(err)
@@ -102,9 +104,9 @@ async function editExpense(e) {
     try {
         let res = await axios.get(
             `https://crudcrud.com/api/${key}/${resourceName}/${userID}`)
-        console.log(res.data)
+
         const { amount: a, details: d, category: c } = res.data
-        
+
         amount.value = a
         details.value = d
         category.value = c
